@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+    --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+    --white: hsl(0, 100%, 100%);
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    margin: 0;
+
+    background-image: url(./images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: grid;
+    justify-items: center;
+    min-height: 100vh;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+.card--one {
+    background-color: var(--dark-blue);
+    padding-block-start: 40px;
+    padding-block-end: 40px;
+    padding-inline-start: 40px;
+    padding-inline-end: 40px;
+    border-radius: 12px;
+    border-top-right-radius: 90px;
+
+    box-sizing: border-box;
+    inline-size: 325px;
+}
+
+.card__logo {
+    margin-block-end: 30px;
+}
+
+.card__icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon__document, .icon__folder, .icon__upload {
+    background-color: var(--very-dark-blue);
+
+    height: 20px;
+    width: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.card--two{
+    background-color: var(--dark-blue);
+    padding-block-start: 15px;
+    padding-block-end: 40px;
+    padding-inline-start: 30px;
+    padding-inline-end: 30px;
+    border-radius: 12px;
+
+    box-sizing: border-box;
+    inline-size: 325px;
+    position: relative;
+}
+
+.card__text {
+    color: var(--pale-blue);
+    text-align: center;
+}
+
+.progress {
+    background-color: hsla(229, 57%, 11%, 0.45);
+    padding: 1px;
+    border-radius: 8px;
+}
+
+input[type="range"] {
+    width: 80%;
+    appearance: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+
+.card__progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--white);
+    cursor: pointer;
+  }
+
+.card__progress::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--white);
+    cursor: pointer;
+}
+
+.card__range {
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: 10px;
+}
+
+.card__range p {
+    color: var(--pale-blue);
+    font-weight: 700;
+    margin-block-start: 0;
+    font-size: 12px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.card__disk {
+    position: absolute;
+    text-transform: uppercase;
+    padding-block-start: 15px;
+    padding-block-end: 15px;
+    padding-inline-start: 25px;
+    padding-inline-end: 25px;
+    background-color: var(--white);
+    border-radius: 8px;
+    margin: 0 auto;
+    inset-inline-start: 20%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card__disk p:nth-child(1) {
+    font-size: 40px;
+    margin: 0;
+}
+
+.card__disk p:nth-child(2) {
+    color: var(--grayish-blue);
+    margin: 0;
+}
+
+@media screen and (min-width: 1440px) {
+
+    body {
+        background-color: var(--very-dark-blue);
+        background-image: url(./images/bg-desktop.png);
+        background-size: initial;
+
+        background-position-y: bottom;
+        background-repeat: repeat-x;
+    }
+
+    section {
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        block-size: 200px;
+        margin: auto;
+    }
+
+    .card--two {
+        inline-size: 540px;
+        padding-block-start: 40px;
+        padding-block-end: 40px;
+        padding-inline-start: 40px;
+        padding-inline-end: 40px;
+        
+        block-size: 155px;
+
+        align-self: flex-end;
+    }
+
+    .card__text {
+        text-align: start;
+    }
+
+    .card__disk {
+        padding-block-start: 10px;
+
+        inset-inline-start: 60.4%;
+        inset-block-start: -25%;
+        border-bottom-right-radius: 0;
+    }
+    
+    .card__disk::after {
+        content: '';
+        display:block;
+        width: 20px;
+        height: 25px;
+        background-color: var(--white);
+        position: absolute;
+        inset-block-end: -33%;
+        inset-inline-end: 0%;
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+    }
+}
